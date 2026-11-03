@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SavoirFaire from "@/components/SavoirFaire";
+import UniversBoutique from "@/components/UniversBoutique";
+import AtelierConseil from "@/components/AtelierConseil";
+import HistoireMaison from "@/components/HistoireMaison";
 import InfosPratiques from "@/components/InfosPratiques";
 import Footer from "@/components/Footer";
 
@@ -11,6 +14,9 @@ export default function HomePage() {
       <main className="flex-1">
         <Hero />
         <SavoirFaire />
+        <UniversBoutique />
+        <AtelierConseil />
+        <HistoireMaison />
         <InfosPratiques />
       </main>
       <Footer />

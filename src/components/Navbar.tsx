@@ -1,6 +1,8 @@
+import { Phone } from "lucide-react";
+
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#FBFBF9]/80 backdrop-blur-xl border-b border-[#1D1D1F]/[0.06] transition-colors">
+    <header className="sticky top-0 z-50 w-full bg-[#FBFBF9]/85 backdrop-blur-xl border-b border-[#1D1D1F]/[0.06] transition-colors">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
         <a
           href="#top"
@@ -15,29 +17,42 @@ export default function Navbar() {
               Humbert-Buquet
             </span>
             <span className="block text-[11px] text-[#6E6E73] tracking-[-0.01em] truncate">
-              Droguerie · Metz, 1937
+              33 En Fournirue · Metz (1937)
             </span>
           </div>
         </a>
 
-        <nav aria-label="Navigation principale" className="flex items-center gap-5 sm:gap-8 shrink-0">
+        <nav aria-label="Navigation principale" className="flex items-center gap-4 sm:gap-7 shrink-0">
+          <a
+            href="#univers"
+            className="text-xs sm:text-[13px] font-medium text-[#6E6E73] hover:text-[#1D1D1F] transition-colors"
+          >
+            Les Univers
+          </a>
           <a
             href="#savoir-faire"
-            className="text-xs sm:text-[13px] font-medium text-[#6E6E73] hover:text-[#1D1D1F] transition-colors"
+            className="hidden md:inline-block text-[13px] font-medium text-[#6E6E73] hover:text-[#1D1D1F] transition-colors"
           >
             Savoir-Faire
           </a>
           <a
-            href="#infos-pratiques"
+            href="#diagnostic"
+            className="hidden lg:inline-block text-[13px] font-medium text-[#6E6E73] hover:text-[#1D1D1F] transition-colors"
+          >
+            Conseil au Comptoir
+          </a>
+          <a
+            href="#histoire"
             className="hidden sm:inline-block text-[13px] font-medium text-[#6E6E73] hover:text-[#1D1D1F] transition-colors"
           >
-            Infos Pratiques
+            Histoire
           </a>
           <a
             href="#infos-pratiques"
-            className="inline-flex items-center justify-center rounded-full bg-[#2C1E16]/[0.06] hover:bg-[#2C1E16] text-[#2C1E16] hover:text-[#FBFBF9] px-3.5 py-1.5 text-xs font-medium tracking-[-0.01em] transition-all duration-300"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#2C1E16] hover:bg-[#3E2B20] text-[#FBFBF9] px-3.5 py-1.5 text-xs font-medium tracking-[-0.01em] transition-all duration-300 shadow-xs"
           >
-            En Fournirue
+            <Phone className="w-3 h-3 text-[#D6C5B3]" strokeWidth={2} aria-hidden="true" />
+            <span>Nous trouver</span>
           </a>
         </nav>
       </div>

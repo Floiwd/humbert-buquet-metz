@@ -1,8 +1,9 @@
-import { MapPin, Clock, Navigation, Phone } from "lucide-react";
+import { MapPin, Clock, Navigation, Phone, Car } from "lucide-react";
 import Reveal from "./Reveal";
 
 const HOURS = [
-  { day: "Mardi – Samedi", morning: "09h00 – 12h00", afternoon: "14h00 – 18h30" },
+  { day: "Mardi, Mercredi, Vendredi, Samedi", morning: "10h00 – 12h00", afternoon: "14h00 – 18h45" },
+  { day: "Jeudi", morning: "10h00 – 12h15", afternoon: "14h00 – 18h45" },
   { day: "Dimanche – Lundi", morning: "Fermé", afternoon: "" },
 ] as const;
 
@@ -16,35 +17,41 @@ export default function InfosPratiques() {
       {/* Section Header */}
       <Reveal className="max-w-2xl mb-14 sm:mb-20">
         <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#4A3326] mb-3">
-          Infos Pratiques
+          Infos Pratiques & Accès
         </p>
         <h2
           id="infos-heading"
-          className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-[1.12]"
+          className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-[1.12] mb-3"
         >
-          Nous rendre visite à Metz.
+          Venir à la droguerie au 33 En Fournirue.
         </h2>
+        <p className="text-base text-[#6E6E73] leading-relaxed">
+          En plein cœur piéton et historique de Metz, entre la Cathédrale Saint-Étienne, la Place Saint-Jacques et la Place Saint-Louis.
+        </p>
       </Reveal>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-        {/* Left Card: Address & Hours */}
+        {/* Left Card: Address, Hours & Parking */}
         <Reveal className="lg:col-span-5 h-full">
-          <div className="h-full rounded-3xl bg-white border border-[#1D1D1F]/[0.07] p-8 sm:p-10 shadow-[0_4px_24px_rgba(28,25,23,0.03)] flex flex-col justify-between gap-10">
-            <div className="space-y-8">
+          <div className="h-full rounded-3xl bg-white border border-[#1D1D1F]/[0.07] p-8 sm:p-10 shadow-[0_4px_24px_rgba(28,25,23,0.03)] flex flex-col justify-between gap-8">
+            <div className="space-y-7">
               {/* Address Block */}
               <div>
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.06em] text-[#4A3326] mb-3">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.06em] text-[#4A3326] mb-2.5">
                   <MapPin className="w-3.5 h-3.5" strokeWidth={1.75} aria-hidden="true" />
                   <span>Adresse</span>
                 </div>
                 <p className="text-xl font-semibold tracking-[-0.02em] text-[#1D1D1F]">
                   La Droguerie Humbert-Buquet
                 </p>
-                <p className="text-[15px] text-[#1D1D1F] mt-1">
-                  En Fournirue, 57000 Metz
+                <p className="text-xs font-medium text-[#7C5836] mt-0.5">
+                  La Droguerie de Metz · Gaëlle & Romain Buquet
                 </p>
-                <p className="text-sm text-[#6E6E73] mt-1.5 leading-relaxed">
-                  Quartier historique · À 2 minutes à pied de la Cathédrale Saint-Étienne et de la Place Saint-Louis.
+                <p className="text-[15px] font-medium text-[#1D1D1F] mt-2">
+                  33, En Fournirue — 57000 Metz
+                </p>
+                <p className="text-xs sm:text-sm text-[#6E6E73] mt-1 leading-relaxed">
+                  Quartier historique · À 2 minutes à pied de la Cathédrale Saint-Étienne et de la Place Saint-Jacques.
                 </p>
               </div>
 
@@ -52,19 +59,19 @@ export default function InfosPratiques() {
 
               {/* Hours Block */}
               <div>
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.06em] text-[#4A3326] mb-4">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.06em] text-[#4A3326] mb-3.5">
                   <Clock className="w-3.5 h-3.5" strokeWidth={1.75} aria-hidden="true" />
                   <span>Horaires d’ouverture</span>
                 </div>
 
-                <dl className="space-y-3.5 text-sm">
+                <dl className="space-y-3 text-xs sm:text-sm">
                   {HOURS.map((row) => (
                     <div
                       key={row.day}
                       className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-2 border-b border-[#1D1D1F]/[0.05] last:border-none"
                     >
                       <dt className="font-medium text-[#1D1D1F]">{row.day}</dt>
-                      <dd className="text-[#6E6E73] sm:text-right font-normal tabular-nums">
+                      <dd className="text-[#6E6E73] sm:text-right font-normal tabular-nums shrink-0">
                         {row.afternoon ? (
                           <span>
                             {row.morning} <span className="text-[#1D1D1F]/30 mx-1">·</span> {row.afternoon}
@@ -77,25 +84,38 @@ export default function InfosPratiques() {
                   ))}
                 </dl>
               </div>
+
+              <hr className="border-[#1D1D1F]/[0.06]" />
+
+              {/* Parking & Access */}
+              <div>
+                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.06em] text-[#4A3326] mb-2">
+                  <Car className="w-3.5 h-3.5" strokeWidth={1.75} aria-hidden="true" />
+                  <span>Stationnement & Accès</span>
+                </div>
+                <p className="text-xs sm:text-sm text-[#6E6E73] leading-relaxed">
+                  Parkings couverts à moins de 3 minutes : <strong className="font-medium text-[#1D1D1F]">Parking Saint-Jacques</strong>, <strong className="font-medium text-[#1D1D1F]">Parking Cathédrale</strong> et <strong className="font-medium text-[#1D1D1F]">Parking Coislin</strong>.
+                </p>
+              </div>
             </div>
 
             {/* Direct Contact / Directions Footer */}
-            <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-[#1D1D1F]/[0.06]">
+            <div className="pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#1D1D1F]/[0.06]">
               <a
-                href="tel:+33387750437"
-                className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-medium text-[#1D1D1F] hover:text-[#4A3326] transition-colors"
+                href="tel:+33387366975"
+                className="inline-flex items-center gap-2 rounded-full bg-[#F4F0EA] hover:bg-[#EAE3D8] px-4 py-2 text-xs sm:text-[13px] font-semibold text-[#2C1E16] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-[#4A3326]" strokeWidth={1.75} aria-hidden="true" />
-                <span>03 87 75 04 37</span>
+                <span>03 87 36 69 75</span>
               </a>
 
               <a
-                href="https://maps.apple.com/?q=Droguerie+Humbert+Buquet+En+Fournirue+57000+Metz"
+                href="https://maps.apple.com/?q=33+En+Fournirue+57000+Metz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-medium text-[#4A3326] hover:text-[#2C1E16] transition-colors"
               >
-                <span>Itinéraire</span>
+                <span>Itinéraire direct</span>
                 <Navigation className="w-3.5 h-3.5" strokeWidth={1.75} aria-hidden="true" />
               </a>
             </div>
@@ -104,7 +124,7 @@ export default function InfosPratiques() {
 
         {/* Right Card: Minimalist Apple Maps Design */}
         <Reveal delayMs={100} className="lg:col-span-7 h-full">
-          <div className="relative h-full min-h-[380px] sm:min-h-[440px] rounded-3xl overflow-hidden border border-[#1D1D1F]/[0.08] bg-[#F2EFE9] shadow-[0_8px_32px_rgba(28,25,23,0.04)] flex flex-col justify-between p-4 sm:p-6">
+          <div className="relative h-full min-h-[400px] sm:min-h-[460px] rounded-3xl overflow-hidden border border-[#1D1D1F]/[0.08] bg-[#F2EFE9] shadow-[0_8px_32px_rgba(28,25,23,0.04)] flex flex-col justify-between p-4 sm:p-6">
             {/* Vector Apple Maps Background */}
             <svg
               viewBox="0 0 720 480"
@@ -185,7 +205,7 @@ export default function InfosPratiques() {
                 strokeLinecap="round"
               />
 
-              {/* Subtle Walking Route Dashed Line from Place d'Armes to Humbert-Buquet */}
+              {/* Subtle Walking Route Dashed Line from Place d'Armes to 33 En Fournirue */}
               <path
                 d="M286 158 L 286 191 L 368 192"
                 stroke="#4A3326"
@@ -201,7 +221,7 @@ export default function InfosPratiques() {
               <div className="inline-flex items-center gap-2 rounded-full bg-white/85 backdrop-blur-md border border-[#1D1D1F]/[0.08] px-3.5 py-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)]">
                 <span className="w-2 h-2 rounded-full bg-[#2C1E16]" aria-hidden="true" />
                 <span className="text-xs font-medium text-[#1D1D1F] tracking-[-0.01em]">
-                  Metz · Centre Historique
+                  33 En Fournirue · Metz Centre
                 </span>
               </div>
 
@@ -219,15 +239,15 @@ export default function InfosPratiques() {
 
               {/* Apple Maps Popover Callout Card */}
               <div className="relative flex flex-col items-center">
-                <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-[#1D1D1F]/[0.08] px-5 py-3.5 shadow-[0_16px_36px_-8px_rgba(28,25,23,0.14)] text-center max-w-[280px] sm:max-w-xs">
+                <div className="rounded-2xl bg-white/95 backdrop-blur-xl border border-[#1D1D1F]/[0.08] px-5 py-3.5 shadow-[0_16px_36px_-8px_rgba(28,25,23,0.14)] text-center max-w-[290px] sm:max-w-xs">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.06em] text-[#7C5836]">
-                    Institution depuis 1937
+                    Maison fondée en 1937
                   </p>
                   <p className="text-sm sm:text-[15px] font-semibold text-[#1D1D1F] tracking-[-0.01em] mt-0.5">
                     La Droguerie Humbert-Buquet
                   </p>
                   <p className="text-xs text-[#6E6E73] mt-0.5">
-                    Rue en Fournirue · 57000 Metz
+                    33, En Fournirue · 57000 Metz
                   </p>
                 </div>
 
@@ -252,19 +272,19 @@ export default function InfosPratiques() {
 
               {/* Nearby Landmark Label (Place Saint-Louis) */}
               <div className="self-end mr-4 sm:mr-14 mt-4 inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5]/90 border border-[#1D1D1F]/[0.07] px-2.5 py-1 text-[11px] font-medium text-[#6E6E73] shadow-xs">
-                <span>Place Saint-Louis · 3 min</span>
+                <span>Place Saint-Jacques & Saint-Louis · 2 min</span>
               </div>
             </div>
 
             {/* Bottom Overlay: Street Tag & Open in Maps CTA */}
             <div className="relative z-10 flex flex-wrap items-center justify-between gap-3">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#4A3326] bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#1D1D1F]/[0.06]">
-                Axe piéton · En Fournirue
+                33 En Fournirue · 57000 Metz
               </span>
 
               <div className="flex items-center gap-2">
                 <a
-                  href="https://maps.apple.com/?q=La+Droguerie+Humbert+Buquet+En+Fournirue+57000+Metz"
+                  href="https://maps.apple.com/?q=33+En+Fournirue+57000+Metz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full bg-[#2C1E16] hover:bg-[#3E2B20] text-[#FBFBF9] px-4 py-2 text-xs font-medium shadow-[0_4px_14px_rgba(44,30,22,0.22)] transition-all"
@@ -273,7 +293,7 @@ export default function InfosPratiques() {
                   <Navigation className="w-3 h-3" strokeWidth={2} aria-hidden="true" />
                 </a>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Droguerie+Humbert-Buquet+En+Fournirue+57000+Metz"
+                  href="https://www.google.com/maps/search/?api=1&query=Droguerie+Humbert-Buquet+33+En+Fournirue+57000+Metz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-full bg-white/90 hover:bg-white text-[#1D1D1F] border border-[#1D1D1F]/[0.08] px-3.5 py-2 text-xs font-medium transition-all"

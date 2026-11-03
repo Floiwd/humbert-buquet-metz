@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-[#1D1D1F]/[0.06] bg-[#FBFBF9]">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs text-[#6E6E73]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs text-[#6E6E73]">
         <div className="space-y-1">
           <p className="font-semibold text-[#1D1D1F] tracking-[-0.01em]">
             La Droguerie Humbert-Buquet · La Droguerie de Metz
@@ -11,7 +11,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-5">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
           <a
             href="#univers"
             className="hover:text-[#1D1D1F] transition-colors"
@@ -36,10 +36,12 @@ export default function Footer() {
           >
             Horaires & Accès
           </a>
-          <span className="text-[#1D1D1F]/20" aria-hidden="true">
+          <span className="hidden sm:inline text-[#1D1D1F]/20" aria-hidden="true">
             |
           </span>
-          <span>© 1937–2026 Humbert-Buquet</span>
+          <span className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-none border-[#1D1D1F]/[0.05]">
+            © 1937–2026 Humbert-Buquet
+          </span>
         </div>
       </div>
     </footer>

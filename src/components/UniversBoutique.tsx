@@ -11,9 +11,9 @@ import Reveal from "./Reveal";
 
 const UNIVERS = [
   {
-    tag: "Spécialité emblématique · 72 coloris",
+    tag: "72 coloris en stock",
     title: "Le Bar à Cirages & Soin du Cuir",
-    subtitle: "L’un des plus vastes nuanciers de la région Grand Est",
+    subtitle: "L’un des plus vastes nuanciers du Grand Est",
     description:
       "Pour redonner éclat et souplesse à vos souliers, blousons, sacs de maroquinerie ou fauteuils Club. Nous identifions au comptoir la nuance exacte parmi plus de 70 teintes.",
     brands: "Avel · Saphir · Tarrago",
@@ -25,9 +25,9 @@ const UNIVERS = [
     ],
   },
   {
-    tag: "Lames d’exception & Artisanat",
+    tag: "Lames & Artisanat",
     title: "Coutellerie Fine & Couteaux d’Art",
-    subtitle: "Du couteau de chef japonais au pliant patrimonial français",
+    subtitle: "Du couteau de chef japonais au pliant français",
     description:
       "Un rayon coutellerie rigoureusement sélectionné pour les passionnés de gastronomie comme pour les collectionneurs de belles lames forgées.",
     brands: "Kai · Victorinox · Laguiole · Nontron · Benjamin Laraud",
@@ -39,12 +39,12 @@ const UNIVERS = [
     ],
   },
   {
-    tag: "Restaurer plutôt que remplacer",
+    tag: "Soin du patrimoine",
     title: "Ébénisterie, Bois, Marbres & Métaux",
     subtitle: "Les formules des antiquaires et artisans d’art",
     description:
       "Tout le nécessaire pour nourrir un meuble en chêne massif, estomper une auréole sur un vernis au tampon, cristalliser un marbre ou raviver l’argenterie de famille.",
-    brands: "Cires d’abeille · Popotes · Paille de fer 0000",
+    brands: "Cires d’abeille · Popotes d’antiquaire · Laine d’acier 0000",
     icon: Sparkles,
     items: [
       "Cires d’abeille en pâte, huile de lin & térébenthine pure gemme",
@@ -58,7 +58,7 @@ const UNIVERS = [
     subtitle: "Montures en bois de hêtre et fibres d’origine",
     description:
       "Des outils ménagers conçus pour durer des décennies, qui respectent vos surfaces délicates sans les rayer grâce à la souplesse des fibres naturelles.",
-    brands: "Crin · Soie · Tampico · Chiendent · Autruche",
+    brands: "Crin de cheval · Soie · Tampico · Chiendent · Autruche",
     icon: Brush,
     items: [
       "Balais d’intérieur en pur crin et soie naturelle",
@@ -67,7 +67,7 @@ const UNIVERS = [
     ],
   },
   {
-    tag: "Matières premières pures",
+    tag: "Matières premières",
     title: "Droguerie d’Antan & Écologie",
     subtitle: "Les ingrédients bruts d’une maison saine",
     description:
@@ -81,7 +81,7 @@ const UNIVERS = [
     ],
   },
   {
-    tag: "Revendeur historique à Metz",
+    tag: "Revendeur historique",
     title: "Parfums d’Intérieur & Maison Berger",
     subtitle: "L’art de purifier et parfumer votre intérieur",
     description:
@@ -101,52 +101,52 @@ export default function UniversBoutique() {
     <section
       id="univers"
       aria-labelledby="univers-heading"
-      className="py-24 sm:py-32 max-w-6xl mx-auto px-5 sm:px-8"
+      className="py-20 sm:py-28 lg:py-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
     >
       {/* Section Header */}
-      <Reveal className="max-w-3xl mb-14 sm:mb-20">
+      <Reveal className="max-w-3xl mb-12 sm:mb-16 lg:mb-20">
         <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#4A3326] mb-3">
           Au 33 En Fournirue · Plus de 5 600 références
         </p>
         <h2
           id="univers-heading"
-          className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-[1.12] mb-4"
+          className="text-2xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-[1.12] mb-4"
         >
           Six univers d’exception réunis sous un même toit.
         </h2>
-        <p className="text-base sm:text-lg text-[#6E6E73] leading-relaxed">
+        <p className="text-[15px] sm:text-lg text-[#6E6E73] leading-relaxed">
           Surnommée par les Messins la « caverne d’Ali Baba » du centre-ville, la Droguerie Humbert-Buquet rassemble les produits introuvables en grande distribution, privilégiant la durabilité et le fabriqué en France.
         </p>
       </Reveal>
 
       {/* 6-Card Apple Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
         {UNIVERS.map((u, index) => {
           const Icon = u.icon;
           return (
             <Reveal key={u.title} delayMs={index * 60} className="h-full">
-              <article className="h-full rounded-3xl bg-white border border-[#1D1D1F]/[0.07] p-7 sm:p-8 shadow-[0_4px_24px_rgba(28,25,23,0.03)] hover:shadow-[0_16px_40px_rgba(44,30,22,0.07)] hover:-translate-y-0.5 transition-all duration-500 flex flex-col justify-between">
+              <article className="h-full rounded-3xl bg-white border border-[#1D1D1F]/[0.07] p-6 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(28,25,23,0.03)] hover:shadow-[0_16px_40px_rgba(44,30,22,0.07)] hover:-translate-y-0.5 transition-all duration-500 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between gap-3 mb-6">
+                  <div className="flex items-center justify-between gap-2 mb-5 sm:mb-6">
                     <div className="w-11 h-11 rounded-2xl bg-[#F4F0EA] border border-[#4A3326]/[0.1] flex items-center justify-center text-[#3E2723] shrink-0">
                       <Icon className="w-5 h-5" strokeWidth={1.6} aria-hidden="true" />
                     </div>
-                    <span className="text-[11px] font-medium text-[#4A3326] bg-[#F4F0EA]/80 px-3 py-1 rounded-full border border-[#4A3326]/[0.08] truncate">
+                    <span className="text-[11px] font-medium text-[#4A3326] bg-[#F4F0EA]/80 px-3 py-1 rounded-full border border-[#4A3326]/[0.08] whitespace-nowrap">
                       {u.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-[#1D1D1F] mb-1">
+                  <h3 className="text-lg sm:text-xl font-semibold tracking-[-0.02em] text-[#1D1D1F] mb-1">
                     {u.title}
                   </h3>
                   <p className="text-xs font-medium text-[#7C5836] mb-3">
                     {u.subtitle}
                   </p>
-                  <p className="text-sm text-[#6E6E73] leading-relaxed mb-6">
+                  <p className="text-sm text-[#6E6E73] leading-relaxed mb-5 sm:mb-6">
                     {u.description}
                   </p>
 
-                  <ul className="space-y-2.5 border-t border-[#1D1D1F]/[0.06] pt-5 mb-6">
+                  <ul className="space-y-2.5 border-t border-[#1D1D1F]/[0.06] pt-4 sm:pt-5 mb-6">
                     {u.items.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#1D1D1F]/90 leading-snug">
                         <Check className="w-3.5 h-3.5 text-[#4A3326] shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
@@ -156,11 +156,11 @@ export default function UniversBoutique() {
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-[#1D1D1F]/[0.05] flex items-center justify-between gap-2">
-                  <span className="text-[11px] uppercase tracking-[0.05em] text-[#6E6E73]">
-                    Références
+                <div className="pt-4 border-t border-[#1D1D1F]/[0.05] flex flex-col gap-1">
+                  <span className="text-[10px] uppercase tracking-[0.06em] text-[#6E6E73] font-medium">
+                    Marques & Références phares
                   </span>
-                  <span className="text-xs font-medium text-[#2C1E16] text-right">
+                  <span className="text-xs font-semibold text-[#2C1E16] leading-snug">
                     {u.brands}
                   </span>
                 </div>

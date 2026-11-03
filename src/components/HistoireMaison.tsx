@@ -24,7 +24,7 @@ const MILESTONES = [
   },
   {
     year: "Aujourd’hui",
-    place: "3e génération · La Droguerie de Metz",
+    place: "3e génération · Metz",
     title: "Romain & Gaëlle Buquet",
     description:
       "La troisième génération perpétue l’art du conseil au comptoir avec plus de 5 600 références : 72 teintes de cirage, coutellerie d’art, produits écologiques et Maison Berger.",
@@ -36,38 +36,38 @@ export default function HistoireMaison() {
     <section
       id="histoire"
       aria-labelledby="histoire-heading"
-      className="py-24 sm:py-32 max-w-6xl mx-auto px-5 sm:px-8 border-b border-[#1D1D1F]/[0.06]"
+      className="py-20 sm:py-28 lg:py-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-[#1D1D1F]/[0.06]"
     >
-      <Reveal className="max-w-3xl mb-14 sm:mb-20">
+      <Reveal className="max-w-3xl mb-12 sm:mb-16 lg:mb-20">
         <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#4A3326] mb-3">
           Patrimoine & Transmission
         </p>
         <h2
           id="histoire-heading"
-          className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-[1.12] mb-4"
+          className="text-2xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-[1.12] mb-4"
         >
           Près de 90 ans d’histoire familiale, de 1937 au cœur de Metz.
         </h2>
-        <p className="text-base sm:text-lg text-[#6E6E73] leading-relaxed">
+        <p className="text-[15px] sm:text-lg text-[#6E6E73] leading-relaxed">
           Alors que les drogueries traditionnelles disparaissaient des centres-villes, la famille Humbert-Buquet a su préserver et moderniser un métier précieux : celui de prescrire le bon produit pour sauver, rénover et embellir vos objets du quotidien.
         </p>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
         {MILESTONES.map((m, idx) => (
           <Reveal key={m.year} delayMs={idx * 70} className="h-full">
-            <div className="h-full rounded-3xl bg-white border border-[#1D1D1F]/[0.07] p-7 sm:p-8 shadow-[0_4px_24px_rgba(28,25,23,0.03)] flex flex-col justify-between">
+            <div className="h-full rounded-3xl bg-white border border-[#1D1D1F]/[0.07] p-6 sm:p-7 shadow-[0_4px_24px_rgba(28,25,23,0.03)] flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-2 mb-5">
-                  <span className="text-2xl font-semibold tracking-[-0.03em] text-[#2C1E16]">
-                    {m.year}
-                  </span>
+                <div className="flex flex-col items-start gap-2 mb-4">
                   <span className="text-[11px] font-medium text-[#7C5836] bg-[#F4F0EA] px-2.5 py-1 rounded-full">
                     {m.place}
                   </span>
+                  <span className="text-2xl sm:text-[1.75rem] font-semibold tracking-[-0.03em] text-[#2C1E16]">
+                    {m.year}
+                  </span>
                 </div>
 
-                <h3 className="text-base sm:text-lg font-semibold text-[#1D1D1F] tracking-[-0.015em] mb-2.5">
+                <h3 className="text-base sm:text-lg font-semibold text-[#1D1D1F] tracking-[-0.015em] mb-2">
                   {m.title}
                 </h3>
                 <p className="text-sm text-[#6E6E73] leading-relaxed">

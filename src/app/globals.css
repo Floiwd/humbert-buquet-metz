@@ -1,36 +1,191 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --bg-canvas: #fbfbf9;
-    --bg-surface: #f4f3ef;
-    --text-primary: #1d1d1f;
-    --text-secondary: #6e6e73;
-    --wood-deep: #2c1e16;
-    --wood-noble: #4a3326;
-    --wood-brass: #8c6d46;
+  /* THEME 1: Épure Studio (Apple Minimal / Clarté absolue & Noyer raffiné) */
+  :root,
+  [data-theme="apple"] {
+    --bg-canvas: #faf8f5;
+    --bg-surface: #ffffff;
+    --bg-subtle: #f2efe9;
+    --border-color: rgba(28, 25, 23, 0.08);
+    --border-hover: rgba(28, 25, 23, 0.22);
+    --text-primary: #181512;
+    --text-secondary: #575049;
+    --text-muted: #8a8279;
+    --accent-primary: #2c1e16;
+    --accent-primary-hover: #432e22;
+    --accent-contrast: #faf8f5;
+    --accent-badge: #4a3326;
+    --accent-badge-bg: rgba(74, 51, 38, 0.08);
+    --accent-gold: #c59b27;
+    --shadow-card: 0 10px 30px -10px rgba(28, 25, 23, 0.05);
+    --shadow-elevated: 0 20px 50px -12px rgba(28, 25, 23, 0.1);
+    --navbar-bg: rgba(250, 248, 245, 0.85);
+    --card-radius: 28px;
+    --font-heading: var(--font-inter);
+  }
+
+  /* THEME 2: Comptoir 1937 (Officine & Ébénisterie Traditionnelle / Serif & Chêne) */
+  [data-theme="officine"] {
+    --bg-canvas: #f6ede0;
+    --bg-surface: #fdfbf7;
+    --bg-subtle: #ebdcc8;
+    --border-color: rgba(90, 52, 30, 0.15);
+    --border-hover: rgba(90, 52, 30, 0.38);
+    --text-primary: #381f12;
+    --text-secondary: #6e4630;
+    --text-muted: #9e755e;
+    --accent-primary: #5a341e;
+    --accent-primary-hover: #734327;
+    --accent-contrast: #fdfbf7;
+    --accent-badge: #5a341e;
+    --accent-badge-bg: rgba(90, 52, 30, 0.12);
+    --accent-gold: #c67d26;
+    --shadow-card: 0 10px 30px -10px rgba(90, 52, 30, 0.08);
+    --shadow-elevated: 0 22px 55px -12px rgba(90, 52, 30, 0.15);
+    --navbar-bg: rgba(246, 237, 224, 0.9);
+    --card-radius: 12px;
+    --font-heading: var(--font-playfair);
+  }
+
+  /* THEME 3: Herboristerie & Sauge (Apothicaire Végétal / Vert Forêt & Lin) */
+  [data-theme="apothicaire"] {
+    --bg-canvas: #edf3ec;
+    --bg-surface: #f9fbf8;
+    --bg-subtle: #dbe7da;
+    --border-color: rgba(47, 80, 54, 0.14);
+    --border-hover: rgba(47, 80, 54, 0.35);
+    --text-primary: #19321e;
+    --text-secondary: #3d5e44;
+    --text-muted: #6e8e74;
+    --accent-primary: #2f5036;
+    --accent-primary-hover: #223c28;
+    --accent-contrast: #f9fbf8;
+    --accent-badge: #2f5036;
+    --accent-badge-bg: rgba(47, 80, 54, 0.12);
+    --accent-gold: #5b875f;
+    --shadow-card: 0 10px 30px -10px rgba(25, 50, 30, 0.07);
+    --shadow-elevated: 0 20px 50px -12px rgba(25, 50, 30, 0.14);
+    --navbar-bg: rgba(237, 243, 236, 0.88);
+    --card-radius: 20px;
+    --font-heading: var(--font-inter);
+  }
+
+  /* THEME 4: Atelier d'Art (Nocturne / Lames Forgées, Cuir Sombre & Laiton Or) */
+  [data-theme="nocturne"] {
+    --bg-canvas: #12100e;
+    --bg-surface: #1c1916;
+    --bg-subtle: #2b2622;
+    --border-color: rgba(221, 167, 79, 0.16);
+    --border-hover: rgba(221, 167, 79, 0.45);
+    --text-primary: #f6f2ec;
+    --text-secondary: #beb4a8;
+    --text-muted: #857b70;
+    --accent-primary: #dda74f;
+    --accent-primary-hover: #ebb863;
+    --accent-contrast: #12100e;
+    --accent-badge: #dda74f;
+    --accent-badge-bg: rgba(221, 167, 79, 0.16);
+    --accent-gold: #dda74f;
+    --shadow-card: 0 14px 40px -10px rgba(0, 0, 0, 0.7);
+    --shadow-elevated: 0 28px 70px -15px rgba(221, 167, 79, 0.18);
+    --navbar-bg: rgba(18, 16, 14, 0.88);
+    --card-radius: 24px;
+    --font-heading: var(--font-inter);
+  }
+
+  /* THEME 5: Pierre de Jaumont (Minéral Messin / Calcaire Doré & Bleu Cobalt) */
+  [data-theme="mineral"] {
+    --bg-canvas: #f9f6ee;
+    --bg-surface: #ffffff;
+    --bg-subtle: #eee6d6;
+    --border-color: rgba(27, 77, 104, 0.14);
+    --border-hover: rgba(27, 77, 104, 0.38);
+    --text-primary: #142938;
+    --text-secondary: #3b576b;
+    --text-muted: #728c9e;
+    --accent-primary: #1b4d68;
+    --accent-primary-hover: #13384c;
+    --accent-contrast: #ffffff;
+    --accent-badge: #1b4d68;
+    --accent-badge-bg: rgba(27, 77, 104, 0.1);
+    --accent-gold: #c98826;
+    --shadow-card: 0 10px 30px -10px rgba(27, 77, 104, 0.06);
+    --shadow-elevated: 0 20px 50px -12px rgba(27, 77, 104, 0.12);
+    --navbar-bg: rgba(249, 246, 238, 0.9);
+    --card-radius: 16px;
+    --font-heading: var(--font-playfair);
+  }
+
+  /* ========================================================
+     MODIFICATIONS STRUCTURELLES & DISPOSITION PAR THÈME
+     ======================================================== */
+
+  /* OFFICINE (1937) : Style Gazette d'Époque, typographie à empattements, bordures marquées */
+  [data-theme="officine"] #top .hero-editorial-badge {
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
+    font-family: var(--font-playfair) !important;
+  }
+  [data-theme="officine"] #top h1 {
+    font-family: var(--font-playfair) !important;
+    letter-spacing: -0.01em !important;
+  }
+  [data-theme="officine"] article,
+  [data-theme="officine"] .theme-card {
+    border-radius: 8px !important;
+    border-width: 1.5px !important;
+  }
+  [data-theme="officine"] #top .hero-card-container {
+    border-radius: 12px !important;
+  }
+
+  /* APOTHICAIRE : Végétal, bordures très douces et aérées */
+  [data-theme="apothicaire"] article,
+  [data-theme="apothicaire"] .theme-card {
+    border-radius: 20px !important;
+  }
+
+  /* NOCTURNE : High-contrast, glow raffiné sur les cartes et éléments clés */
+  [data-theme="nocturne"] article:hover,
+  [data-theme="nocturne"] .theme-card:hover {
+    border-color: rgba(221, 167, 79, 0.45) !important;
+    box-shadow: 0 10px 30px rgba(221, 167, 79, 0.12) !important;
+  }
+
+  /* MINÉRAL : Ligne claire architecturale, élégance patrimoniale */
+  [data-theme="mineral"] h1,
+  [data-theme="mineral"] h2,
+  [data-theme="mineral"] h3 {
+    font-family: var(--font-playfair) !important;
   }
 
   html {
-    color-scheme: light;
     scroll-behavior: smooth;
-    background-color: #fbfbf9;
-    color: #1d1d1f;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
 
   body {
-    background-color: #fbfbf9;
-    color: #1d1d1f;
-    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  h1, h2, h3, .theme-heading {
+    font-family: var(--font-heading);
+    transition: font-family 0.3s ease;
   }
 
   ::selection {
-    background-color: rgba(44, 30, 22, 0.12);
-    color: #1d1d1f;
+    background-color: var(--accent-badge-bg);
+    color: var(--text-primary);
   }
 }
 

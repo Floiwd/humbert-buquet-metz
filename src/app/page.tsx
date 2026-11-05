@@ -4,22 +4,35 @@ import SavoirFaire from "@/components/SavoirFaire";
 import UniversBoutique from "@/components/UniversBoutique";
 import AtelierConseil from "@/components/AtelierConseil";
 import HistoireMaison from "@/components/HistoireMaison";
+import AvisClients from "@/components/AvisClients";
 import InfosPratiques from "@/components/InfosPratiques";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeContext";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBFBF9] text-[#1D1D1F] overflow-x-hidden">
-      <Navbar />
-      <main className="flex-1">
-        <Hero />
-        <SavoirFaire />
-        <UniversBoutique />
-        <AtelierConseil />
-        <HistoireMaison />
-        <InfosPratiques />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div
+        className="min-h-screen flex flex-col overflow-x-hidden transition-colors duration-400"
+        style={{
+          backgroundColor: "var(--bg-canvas)",
+          color: "var(--text-primary)",
+        }}
+      >
+        <Navbar />
+        <main className="flex-1">
+          <Hero />
+          <SavoirFaire />
+          <UniversBoutique />
+          <AtelierConseil />
+          <HistoireMaison />
+          <AvisClients />
+          <InfosPratiques />
+        </main>
+        <Footer />
+        <ThemeSwitcher />
+      </div>
+    </ThemeProvider>
   );
 }

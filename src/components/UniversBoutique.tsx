@@ -101,20 +101,27 @@ export default function UniversBoutique() {
     <section
       id="univers"
       aria-labelledby="univers-heading"
-      className="py-20 sm:py-28 lg:py-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+      className="py-20 sm:py-28 lg:py-32 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 transition-colors duration-400"
     >
       {/* Section Header */}
       <Reveal className="max-w-3xl mb-12 sm:mb-16 lg:mb-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#4A3326] mb-3">
+        <p
+          className="text-xs font-semibold uppercase tracking-[0.08em] mb-3"
+          style={{ color: "var(--accent-badge)" }}
+        >
           Au 33 En Fournirue · Plus de 5 600 références
         </p>
         <h2
           id="univers-heading"
-          className="text-2xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] text-[#1D1D1F] leading-[1.12] mb-4"
+          className="text-2xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-[-0.03em] leading-[1.12] mb-4"
+          style={{ color: "var(--text-primary)" }}
         >
           Six univers d’exception réunis sous un même toit.
         </h2>
-        <p className="text-[15px] sm:text-lg text-[#6E6E73] leading-relaxed">
+        <p
+          className="text-[15px] sm:text-lg leading-relaxed"
+          style={{ color: "var(--text-secondary)" }}
+        >
           Surnommée par les Messins la « caverne d’Ali Baba » du centre-ville, la Droguerie Humbert-Buquet rassemble les produits introuvables en grande distribution, privilégiant la durabilité et le fabriqué en France.
         </p>
       </Reveal>
@@ -125,42 +132,93 @@ export default function UniversBoutique() {
           const Icon = u.icon;
           return (
             <Reveal key={u.title} delayMs={index * 60} className="h-full">
-              <article className="h-full rounded-3xl bg-white border border-[#1D1D1F]/[0.07] p-6 sm:p-7 lg:p-8 shadow-[0_4px_24px_rgba(28,25,23,0.03)] hover:shadow-[0_16px_40px_rgba(44,30,22,0.07)] hover:-translate-y-0.5 transition-all duration-500 flex flex-col justify-between">
+              <article
+                className="theme-card h-full rounded-3xl p-6 sm:p-7 lg:p-8 border shadow-xs hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between"
+                style={{
+                  backgroundColor: "var(--bg-surface)",
+                  borderColor: "var(--border-color)",
+                  boxShadow: "var(--shadow-card)",
+                }}
+              >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-5 sm:mb-6">
-                    <div className="w-11 h-11 rounded-2xl bg-[#F4F0EA] border border-[#4A3326]/[0.1] flex items-center justify-center text-[#3E2723] shrink-0">
+                    <div
+                      className="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 border"
+                      style={{
+                        backgroundColor: "var(--accent-badge-bg)",
+                        color: "var(--accent-badge)",
+                        borderColor: "var(--border-color)",
+                      }}
+                    >
                       <Icon className="w-5 h-5" strokeWidth={1.6} aria-hidden="true" />
                     </div>
-                    <span className="text-[11px] font-medium text-[#4A3326] bg-[#F4F0EA]/80 px-3 py-1 rounded-full border border-[#4A3326]/[0.08] whitespace-nowrap">
+                    <span
+                      className="text-[11px] font-medium px-3 py-1 rounded-full border whitespace-nowrap"
+                      style={{
+                        backgroundColor: "var(--accent-badge-bg)",
+                        color: "var(--accent-badge)",
+                        borderColor: "var(--border-color)",
+                      }}
+                    >
                       {u.tag}
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-semibold tracking-[-0.02em] text-[#1D1D1F] mb-1">
+                  <h3
+                    className="text-lg sm:text-xl font-semibold tracking-[-0.02em] mb-1"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     {u.title}
                   </h3>
-                  <p className="text-xs font-medium text-[#7C5836] mb-3">
+                  <p
+                    className="text-xs font-medium mb-3"
+                    style={{ color: "var(--accent-badge)" }}
+                  >
                     {u.subtitle}
                   </p>
-                  <p className="text-sm text-[#6E6E73] leading-relaxed mb-5 sm:mb-6">
+                  <p
+                    className="text-sm leading-relaxed mb-5 sm:mb-6"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
                     {u.description}
                   </p>
 
-                  <ul className="space-y-2.5 border-t border-[#1D1D1F]/[0.06] pt-4 sm:pt-5 mb-6">
+                  <ul
+                    className="space-y-2.5 border-t pt-4 sm:pt-5 mb-6"
+                    style={{ borderColor: "var(--border-color)" }}
+                  >
                     {u.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#1D1D1F]/90 leading-snug">
-                        <Check className="w-3.5 h-3.5 text-[#4A3326] shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                      <li
+                        key={item}
+                        className="flex items-start gap-2.5 text-xs sm:text-[13px] leading-snug"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        <Check
+                          className="w-3.5 h-3.5 shrink-0 mt-0.5"
+                          style={{ color: "var(--accent-badge)" }}
+                          strokeWidth={2}
+                          aria-hidden="true"
+                        />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="pt-4 border-t border-[#1D1D1F]/[0.05] flex flex-col gap-1">
-                  <span className="text-[10px] uppercase tracking-[0.06em] text-[#6E6E73] font-medium">
+                <div
+                  className="pt-4 border-t flex flex-col gap-1"
+                  style={{ borderColor: "var(--border-color)" }}
+                >
+                  <span
+                    className="text-[10px] uppercase tracking-[0.06em] font-medium"
+                    style={{ color: "var(--text-muted)" }}
+                  >
                     Marques & Références phares
                   </span>
-                  <span className="text-xs font-semibold text-[#2C1E16] leading-snug">
+                  <span
+                    className="text-xs font-semibold leading-snug"
+                    style={{ color: "var(--accent-primary)" }}
+                  >
                     {u.brands}
                   </span>
                 </div>
